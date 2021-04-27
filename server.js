@@ -46,7 +46,7 @@ function myProducts(req,res){
     let SQL = 'insert into product(image,name,price,description) values ($1,$2,$3,$4); ';
     let safeValues = [image,name,price,description];
     client.query(SQL,safeValues)
-    .then(data => res.render('MyProducts',{brand:data.rows}))
+    .then(data => res.render('mycard',{brand:data.rows}))
     .catch(err => res.send(err));
 }
 
