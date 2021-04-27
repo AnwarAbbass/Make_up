@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(243, 211, 211);
+}
+
+div .grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+ul{
+    float: inline-start;
+}
+ul li{
+    float: left;
+}

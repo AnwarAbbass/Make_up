@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/"> Home</a></li>
+            <li> <a href="/allProduct">ALL Products</a>  </li>
+            <li><a href="/mycard">my card</a> </li>
+        </ul>
+    </header>
+    <main>
+            <div>
+                <img src="<%= val.image %> " alt="">
+                <h3><%= val.name %></h3>
+                <p>Price : <%= val.price %></p>
+                <p><%= val.description %></p>
+            </div>
+            <button class="updateBotton">update</button>
+        <form class="updateForm" action="/viewcard/<%= val.id %>?_method=put " method="POST">
+            <input type="text" name="image" id="" value="<%= val.image %>">
+            <input type="text" name="name" id="" value="<%= val.name %>">
+            <input type="text" name="price" id="" value="<%= val.price %>">
+            <input type="text" name="description" id="" value="<%= val.description %>">
+
+            <button>update</button>
+        </form>
+
+        <form action="/viewcard/<%= val.id %>?_method=delete " method="POST">
+            <button>delete</button>
+        </form>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

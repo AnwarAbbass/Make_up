@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/"> Home</a></li>
+            <li> <a href="/allProduct">ALL Products</a>  </li>
+            <li><a href="/mycard">my card</a> </li>
+        </ul>
+    </header>
+    <main>
+        <% brand.forEach(val=>{%> 
+            <div>
+                <img src="<%= val.image %> " alt="">
+                <h3><%= val.name %></h3>
+                <p>Price : <%= val.price %></p>
+                <p><%= val.description %></p>
+            </div>
+        <form action="/mycard " method="POST">
+            <input type="hidden" name="image" id="" value="<%= val.image %>">
+            <input type="hidden" name="name" id="" value="<%= val.name %>">
+            <input type="hidden" name="price" id="" value="<%= val.price %>">
+            <input type="hidden" name="description" id="" value="<%= val.description %>">
+
+            <button>view details</button>
+        </form>
+        <%}) %>
+    </main>
+</body>
+</html>
